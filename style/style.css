@@ -1,30 +1,31 @@
 @import "./fonts.css";
-*{
+
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --bottom-color: #10367c;
+:root {
+    --bottom-color: #3a4576;
     --main-color: #120d0e;
     --secondary-color: #3d3b3c;
     --secondary-text: #bebebe;
     --general-white: #ffffff;
-
+    --background-color: #fafafa;
 }
 
-html{
+html {
     font-size: 10px;
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
 
-body{
+body {
     margin: 0 104px;
-    height: 100vh;
+
 }
 
-.container{
+.container {
     width: 1262px;
     padding: 0 16px;
     margin: 0 auto;
@@ -37,12 +38,12 @@ body{
     height: 0;
 }
 
-.top{
+.top {
     display: grid;
     width: 100%;
 }
 
-.top__navigation{
+.top__navigation {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,32 +56,35 @@ body{
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.top__navigation a{
+.top__navigation a {
     text-decoration: none;
     color: var(--secondary-color);
 }
 
-.top__navigation a:hover{
+.top__navigation a:hover {
     font-weight: 500;
     color: var(--main-color);
 }
 
-.top__navigation a:focus{
+.top__navigation a:focus {
     text-decoration-line: line-through;
 }
 
-.content{
+.content {
     width: 100%;
     display: flex;
     padding: 7.2rem 0;
     justify-content: space-between;
 }
 
-.content--left{
+.content--left {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.title{
+.title {
     font-size: 5.6rem;
     line-height: 6.6rem;
     font-weight: 500;
@@ -88,7 +92,7 @@ body{
     padding-bottom: 0.8rem;
 }
 
-.content--left_subtitle{
+.content--left_subtitle {
     font-size: 5.6rem;
     line-height: 6.6rem;
     font-weight: 500;
@@ -96,7 +100,7 @@ body{
     padding-bottom: 4rem;
 }
 
-.content--left__about{
+.content--left__about {
     width: 100%;
     font-size: 2.2rem;
     line-height: 2.6rem;
@@ -105,20 +109,22 @@ body{
     padding-bottom: 7.2rem;
 }
 
-.content--left__about p:first-child{
-    padding-bottom: 2rem;
+.content--left__about p:first-child {
+    padding-bottom: 3rem;
 }
 
-.content--right{
+.content--right {
     width: 40%;
 }
 
-.content--right img{
+.content--right img {
     width: 100%;
     object-fit: contain;
 }
 
-.submit{
+.submit {
+    display: flex;
+    gap: 2.4rem;
 }
 
 .submit__button {
@@ -130,6 +136,176 @@ body{
     line-height: 2.8rem;
     cursor: pointer;
 }
+
+.skills {
+    height: 60vh;
+    background-color: var(--background-color);
+    margin-right: -104px;
+    margin-left: -104px;
+    text-align: center;
+}
+
+.skills__title {
+    padding-top: 72px;
+    padding-bottom: 54px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.icons__col {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.icons__col--top {
+    width: 100%;
+    height: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons p {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.label {
+    position: relative;
+}
+
+.slider {
+    position: absolute;
+    bottom: -55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    margin-bottom: 7.2rem;
+}
+
+.experience {
+    width: 100%;
+    height: 100vh;
+}
+
+.experience--title {
+    grid-column: 1 / 3;
+    padding-top: 72px;
+    padding-bottom: 56px;
+    text-align: center;
+}
+
+.experience__content {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    grid-template-rows: repeat(3, auto);
+
+}
+
+.experience__content--soft {
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.experience__content--freelance {
+    position: relative;
+    width: 100%;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: right;
+    padding-right: 16px;
+}
+
+.experience__content--freelance div::after{
+    position: absolute;
+    display: block;
+    height: 80%;
+    width: 1px;
+    color: var(--secondary-color);
+}
+
+
+
+
+.experience__content--hotel {
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.experience__col {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+._content{
+    width: 50%;
+}
+
+._date{
+    width: 40%;
+}
+
+.freelance--date,
+.hotel--date {
+    order: 1;
+}
+
+.freelance_col,
+.hotel_col {
+    order: 2;
+}
+
+._content h4, h5 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    color: var(--main-color);
+}
+
+._content h5 {
+    font-weight: 500;
+    padding-top: 4px;
+}
+
+._content p {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: var(--secondary-text);
+    padding-top: 8px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    color: var(--secondary-text);
+}
+
+
+
+
+
 
 
 
